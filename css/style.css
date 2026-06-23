@@ -1,0 +1,188 @@
+/* =========================
+   AFRITALENT — DESIGN SYSTEM
+   COMMIT 1
+   Noir & Doré (moderne 2026)
+========================= */
+
+/* ===== GOOGLE FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+/* ===== ROOT VARIABLES ===== */
+:root {
+    /* Couleurs principales */
+    --primary-black: #0d0d0d;
+    --secondary-black: #1a1a1a;
+    --gold: #d4af37;
+    --gold-light: #f5d76e;
+    --white: #ffffff;
+    --gray: #b5b5b5;
+    --light-bg: #f7f7f7;
+
+    /* Typographie */
+    --font-main: 'Poppins', sans-serif;
+    --font-title: 'Playfair Display', serif;
+
+    /* Espacements */
+    --space-xs: 5px;
+    --space-sm: 10px;
+    --space-md: 20px;
+    --space-lg: 40px;
+    --space-xl: 80px;
+
+    /* Ombres */
+    --shadow-sm: 0 2px 10px rgba(0,0,0,0.08);
+    --shadow-md: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+/* ===== RESET CSS ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--white);
+    color: var(--primary-black);
+    line-height: 1.6;
+}
+
+/* ===== TITRES ===== */
+h1, h2, h3, h4 {
+    font-family: var(--font-title);
+    color: var(--primary-black);
+}
+
+p {
+    color: var(--gray);
+}
+
+/* ===== LIENS ===== */
+a {
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+a:hover {
+    color: var(--gold);
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    background-color: var(--primary-black) !important;
+    padding: 15px 0;
+    box-shadow: var(--shadow-md);
+}
+
+.navbar-brand {
+    font-family: var(--font-title);
+    font-size: 22px;
+    color: var(--gold) !important;
+}
+
+.navbar-brand img {
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+}
+
+.navbar-nav .nav-link {
+    color: var(--white) !important;
+    margin-left: 15px;
+    position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--gold) !important;
+}
+
+/* effet underline doré */
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: var(--gold);
+    transition: 0.3s;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+/* bouton CTA navbar */
+.btn-warning {
+    background-color: var(--gold);
+    border: none;
+    color: var(--primary-black);
+    font-weight: 600;
+}
+
+.btn-warning:hover {
+    background-color: var(--gold-light);
+}
+
+/* ===== SECTIONS GÉNÉRALES ===== */
+section {
+    padding: var(--space-xl) 0;
+}
+
+/* ===== CARDS ===== */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ===== BOUTONS ===== */
+.btn-primary {
+    background-color: var(--primary-black);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--gold);
+    color: var(--primary-black);
+}
+
+/* ===== HERO ===== */
+#hero {
+    background: linear-gradient(to right, #0d0d0d, #1a1a1a);
+    color: var(--white);
+    padding: var(--space-xl) 0;
+}
+
+#hero h1 {
+    color: var(--gold);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: var(--primary-black);
+    color: var(--white);
+}
+
+footer a {
+    color: var(--gray);
+}
+
+footer a:hover {
+    color: var(--gold);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .navbar-nav .nav-link {
+        margin-left: 0;
+        padding: 10px 0;
+    }
+}
+
