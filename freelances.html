@@ -102,13 +102,25 @@
             </div>
         </section>
 
+        <!-- Boutons de filtrage par catégorie -->
+        <section class="container mb-4 text-center" data-aos="fade-up">
+            <div class="btn-group flex-wrap" role="group" aria-label="Catégories de freelances">
+                <button type="button" class="btn btn-warning filter-btn m-1 rounded" data-filter="all">Tous</button>
+                <button type="button" class="btn btn-outline-warning text-dark filter-btn m-1 rounded" data-filter="dev">Développement / DevOps</button>
+                <button type="button" class="btn btn-outline-warning text-dark filter-btn m-1 rounded" data-filter="design">Design / Motion</button>
+                <button type="button" class="btn btn-outline-warning text-dark filter-btn m-1 rounded" data-filter="marketing">Marketing / Rédaction</button>
+                <button type="button" class="btn btn-outline-warning text-dark filter-btn m-1 rounded" data-filter="data">Data / Cyber</button>
+            </div>
+        </section>
+
         <section class="container mb-5">
-            <h2 class="text-center mb-4 fw-bold">Freelances en vedette</h2>
+            <h2 class="text-center mb-4 fw-bold">Nos Freelances</h2>
 
-            <!-- Animation fade-up ajoutée sur la première rangée de cartes -->
-            <div class="row g-4" data-aos="fade-up">
+            <!-- Conteneur global de toutes les cartes avec AOS -->
+            <div class="row g-4" id="freelancers-container" data-aos="fade-up">
 
-                <div class="col-md-4">
+                <!-- Ibrahima Ndiaye (Dev) -->
+                <div class="col-md-4 freelance-card" data-category="dev">
                     <div class="card h-100 p-4 text-center border-warning shadow-sm">
                         <div>
                             <span class="badge bg-warning text-dark mb-3">Top Rated</span>
@@ -121,7 +133,8 @@
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <!-- Awa Diop (Design) -->
+                <div class="col-md-4 freelance-card" data-category="design">
                     <div class="card h-100 p-4 text-center border-success shadow-sm">
                         <div>
                             <span class="badge bg-success mb-3">Disponible</span>
@@ -134,7 +147,8 @@
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <!-- Cheikh Fall (Dev) -->
+                <div class="col-md-4 freelance-card" data-category="dev">
                     <div class="card h-100 p-4 text-center border-primary shadow-sm">
                         <div>
                             <span class="badge bg-primary mb-3">Senior</span>
@@ -147,14 +161,8 @@
                     </div>
                 </div>
 
-            </div>
-        </section>
-
-        <section class="container py-4 mb-5">
-            <!-- Animation fade-up ajoutée sur la deuxième rangée de cartes -->
-            <div class="row g-4" data-aos="fade-up">
-
-                <div class="col-md-4">
+                <!-- Mariama Ba (Data) -->
+                <div class="col-md-4 freelance-card" data-category="data">
                     <div class="card h-100 p-4 text-center shadow-sm">
                         <img src="images/MayramSylla.jpg" class="rounded-circle mx-auto mb-3 img-fluid" alt="Mariama Ba" width="130" height="130" style="object-fit: cover;">
                         <h5 class="fw-bold mb-1">Mariama Ba</h5>
@@ -164,7 +172,8 @@
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <!-- Ousmane Sy (Dev) -->
+                <div class="col-md-4 freelance-card" data-category="dev">
                     <div class="card h-100 p-4 text-center shadow-sm">
                         <img src="images/OusmaneBa.jpg" class="rounded-circle mx-auto mb-3 img-fluid" alt="Ousmane Sy" width="130" height="130" style="object-fit: cover;">
                         <h5 class="fw-bold mb-1">Ousmane Sy</h5>
@@ -174,7 +183,8 @@
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <!-- Fatou Sarr (Marketing) -->
+                <div class="col-md-4 freelance-card" data-category="marketing">
                     <div class="card h-100 p-4 text-center shadow-sm">
                         <img src="images/FatouBa.jpg.avif" class="rounded-circle mx-auto mb-3 img-fluid" alt="Fatou Sarr" width="130" height="130" style="object-fit: cover;">
                         <h5 class="fw-bold mb-1">Fatou Sarr</h5>
@@ -184,7 +194,8 @@
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <!-- Mamadou Seck (Data / Cyber) -->
+                <div class="col-md-4 freelance-card" data-category="data">
                     <div class="card h-100 p-4 text-center shadow-sm">
                         <img src="images/MamadouDiop.jpg" class="rounded-circle mx-auto mb-3 img-fluid" alt="Mamadou Seck" width="130" height="130" style="object-fit: cover;">
                         <h5 class="fw-bold mb-1">Mamadou Seck</h5>
@@ -194,7 +205,8 @@
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <!-- Khadija Gueye (Marketing) -->
+                <div class="col-md-4 freelance-card" data-category="marketing">
                     <div class="card h-100 p-4 text-center shadow-sm">
                         <img src="images/RamaDiop.jpg.avif" class="rounded-circle mx-auto mb-3 img-fluid" alt="Khadija Gueye" width="130" height="130" style="object-fit: cover;">
                         <h5 class="fw-bold mb-1">Khadija Gueye</h5>
@@ -204,7 +216,8 @@
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <!-- Amadou Diallo (Design) -->
+                <div class="col-md-4 freelance-card" data-category="design">
                     <div class="card h-100 p-4 text-center shadow-sm">
                         <img src="images/IbrahimaKane.jpg.avif" class="rounded-circle mx-auto mb-3 img-fluid" alt="Amadou Diallo" width="130" height="130" style="object-fit: cover;">
                         <h5 class="fw-bold mb-1">Amadou Diallo</h5>

@@ -172,3 +172,117 @@ document.addEventListener("DOMContentLoaded", () => {
 
     counters.forEach(counter => observer.observe(counter));
 });
+
+// Filtrage des Freelances par catégorie
+document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const freelanceCards = document.querySelectorAll('.freelance-card');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // 1. Gestion des styles des boutons (Actif / Inactif)
+            filterButtons.forEach(btn => {
+                btn.classList.remove('btn-warning');
+                btn.classList.add('btn-outline-warning', 'text-dark');
+            });
+            button.classList.remove('btn-outline-warning', 'text-dark');
+            button.classList.add('btn-warning');
+
+            // 2. Récupération du filtre sélectionné
+            const selectedCategory = button.getAttribute('data-filter');
+
+            // 3. Filtrage des cartes
+            freelanceCards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+
+                if (selectedCategory === 'all' || cardCategory === selectedCategory) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+
+// Validation complète du formulaire de contact (Page contact.html)
+document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.getElementById('contactForm');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Stoppe le rechargement de la page
+
+            // Récupération des éléments du formulaire
+            const lastName = document.getElementById('lastName');
+            const firstName = document.getElementById('firstName');
+            const email = document.getElementById('email');
+            const message = document.getElementById('message');
+            const successAlert = document.getElementById('successAlert');
+
+            let isFormValid = true;
+
+            // Cacher l'alerte de succès si elle était affichée
+            successAlert.classList.add('d-none');
+
+            // 1. Validation du Nom
+            if (lastName.value.trim() === '') {
+                lastName.classList.add('is-invalid');
+                isFormValid = false;
+            } else {
+                lastName.classList.remove('is-invalid');
+                lastName.classList.add('is-valid');
+            }
+
+            // 2. Validation du Prénom
+            if (firstName.value.trim() === '') {
+                firstName.classList.add('is-invalid');
+                isFormValid = false;
+            } else {
+                firstName.classList.remove('is-invalid');
+                firstName.classList.add('is-valid');
+            }
+
+            // 3. Validation de l'Email (Format Regex)
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email.value.trim() === '') {
+                email.classList.add('is-invalid');
+                document.getElementById('emailError').innerText = "L'adresse email est requise.";
+                isFormValid = false;
+            } else if (!emailRegex.test(email.value.trim())) {
+                email.classList.add('is-invalid');
+                document.getElementById('emailError').innerText = "Veuillez entrer une adresse email valide.";
+                isFormValid = false;
+            } else {
+                email.classList.remove('is-invalid');
+                email.classList.add('is-valid');
+            }
+
+            // 4. Validation du Message (20 caractères min)
+            if (message.value.trim() === '') {
+                message.classList.add('is-invalid');
+                document.getElementById('messageError').innerText = "Le message est requis.";
+                isFormValid = false;
+            } else if (message.value.trim().length < 20) {
+                message.classList.add('is-invalid');
+                document.getElementById('messageError').innerText = "Le message doit contenir au moins 20 caractères.";
+                isFormValid = false;
+            } else {
+                message.classList.remove('is-invalid');
+                message.classList.add('is-valid');
+            }
+
+            // Affichage du succès si tout est valide
+            if (isFormValid) {
+                successAlert.classList.remove('d-none');
+                contactForm.reset(); // Réinitialise les champs
+
+                // Nettoyage des bordures vertes de succès après réinitialisation
+                lastName.classList.remove('is-valid');
+                firstName.classList.remove('is-valid');
+                email.classList.remove('is-valid');
+                message.classList.remove('is-valid');
+            }
+        });
+    }
+});

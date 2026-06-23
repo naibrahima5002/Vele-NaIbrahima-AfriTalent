@@ -6,17 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AfriTalent — Contact</title>
     
-    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="js/main.js" defer></script>
-    <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 
 <body>
 
-    <!-- ================= NAVBAR COMMUNE ================= -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
 
@@ -33,13 +30,11 @@
             <div class="collapse navbar-collapse" id="navMenu">
 
                 <ul class="navbar-nav ms-auto">
-
                     <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
                     <li class="nav-item"><a class="nav-link" href="freelances.html">Freelances</a></li>
                     <li class="nav-item"><a class="nav-link" href="tarifs.html">Tarifs</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">À propos</a></li>
                     <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
-
                 </ul>
                 <button id="themeToggle" class="btn btn-outline-light ms-lg-3">
                     🌙
@@ -55,10 +50,8 @@
 
     <div style="margin-top:80px;"></div>
 
-    <!-- ================= MAIN ================= -->
     <main class="container py-5">
 
-        <!-- TITRE -->
         <section class="text-center mb-5">
             <h1 class="fw-bold">Contactez AfriTalent</h1>
             <p class="text-muted">
@@ -68,35 +61,37 @@
 
         <div class="row g-5">
 
-            <!-- ================= FORMULAIRE ================= -->
             <div class="col-md-6">
 
                 <h3 class="mb-3">Envoyer un message</h3>
 
-                <form>
+                <div id="successAlert" class="alert alert-success d-none mb-4" role="alert">
+                    <i class="bi bi-check-circle-fill me-2"></i> Votre message a été envoyé avec succès !
+                </div>
 
-                    <!-- Nom -->
+                <form id="contactForm" novalidate>
+
                     <div class="mb-3">
                         <label class="form-label">Nom</label>
-                        <input type="text" class="form-control" placeholder="Votre nom">
+                        <input type="text" class="form-control" id="lastName" placeholder="Votre nom">
+                        <div class="invalid-feedback" id="lastNameError">Le nom est requis.</div>
                     </div>
 
-                    <!-- Prénom -->
                     <div class="mb-3">
                         <label class="form-label">Prénom</label>
-                        <input type="text" class="form-control" placeholder="Votre prénom">
+                        <input type="text" class="form-control" id="firstName" placeholder="Votre prénom">
+                        <div class="invalid-feedback" id="firstNameError">Le prénom est requis.</div>
                     </div>
 
-                    <!-- Email -->
                     <div class="mb-3">
                         <label class="form-label">Email</label>
-                        <input type="email" class="form-control" placeholder="exemple@gmail.com">
+                        <input type="email" class="form-control" id="email" placeholder="exemple@gmail.com">
+                        <div class="invalid-feedback" id="emailError">Veuillez entrer une adresse email valide.</div>
                     </div>
 
-                    <!-- Sujet -->
                     <div class="mb-3">
                         <label class="form-label">Sujet</label>
-                        <select class="form-select">
+                        <select class="form-select" id="subject">
                             <option>Demande d'information</option>
                             <option>Support technique</option>
                             <option>Partenariat</option>
@@ -104,11 +99,11 @@
                         </select>
                     </div>
 
-                    <!-- Message -->
                     <div class="mb-3">
                         <label class="form-label">Message</label>
-                        <textarea class="form-control" rows="5"
-                            placeholder="Écrivez votre message..."></textarea>
+                        <textarea class="form-control" id="message" rows="5"
+                            placeholder="Écrivez votre message (20 caractères minimum)..."></textarea>
+                        <div class="invalid-feedback" id="messageError">Le message doit contenir au moins 20 caractères.</div>
                     </div>
 
                     <button type="submit" class="btn btn-primary">
@@ -119,7 +114,6 @@
 
             </div>
 
-            <!-- ================= INFOS + MAP ================= -->
             <div class="col-md-6">
 
                 <h3 class="mb-3">Informations</h3>
@@ -135,7 +129,6 @@
 
                 <hr>
 
-                <!-- GOOGLE MAP -->
                 <h5>Localisation</h5>
 
                 <div class="ratio ratio-16x9">
@@ -152,18 +145,13 @@
 
     </main>
 
-    <!-- ================= FOOTER COMMUN ================= -->
     <footer class="bg-dark text-white mt-5 pt-5 pb-3">
-
         <div class="container">
-
             <div class="row">
-
                 <div class="col-md-3">
                     <h5 class="fw-bold">AfriTalent 🇸🇳</h5>
                     <p>Plateforme sénégalaise de mise en relation entre freelances et entreprises numériques.</p>
                 </div>
-
                 <div class="col-md-3">
                     <h5>Liens utiles</h5>
                     <ul class="list-unstyled">
@@ -174,7 +162,6 @@
                         <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
                     </ul>
                 </div>
-
                 <div class="col-md-3">
                     <h5>Ressources</h5>
                     <ul class="list-unstyled">
@@ -184,27 +171,20 @@
                         <li>Conditions</li>
                     </ul>
                 </div>
-
                 <div class="col-md-3">
                     <h5>Contact</h5>
                     <p>Dakar, Sénégal</p>
                     <p>+221 77 123 45 67</p>
                     <p>contact@afritalent.sn</p>
                 </div>
-
             </div>
-
             <hr>
-
             <div class="text-center">
                 <small>© 2026 AfriTalent — Tous droits réservés</small>
             </div>
-
         </div>
-
     </footer>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <button id="backToTop" class="btn btn-warning" title="Retour en haut">
       <i class="bi bi-arrow-up-short"></i>
