@@ -9,9 +9,12 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- CSS de la bibliothèque d'animation AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -23,7 +26,7 @@
             <a class="navbar-brand d-flex align-items-center" href="index.html">
                 <img src="images/AfriTalent.jpg.png" alt="Logo AfriTalent"
                     width="40" height="40" class="me-2">
-                <span class="fw-bold">AfriTalent 🇸🇳</span>
+                <span class="fw-bold">AfriTalent</span>
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
@@ -58,8 +61,8 @@
     <!-- ================= MAIN ================= -->
     <main>
 
-        <!-- HERO ABOUT -->
-        <section class="py-5  text-center">
+        <!-- HERO ABOUT (Animation zoom-in) -->
+        <section class="py-5 text-center" data-aos="zoom-in">
             <div class="container">
 
                 <h1 class="fw-bold">Notre histoire</h1>
@@ -72,12 +75,12 @@
             </div>
         </section>
 
-        <!-- HISTOIRE DETAILLEE -->
-        <section class="container py-5">
+        <!-- HISTOIRE DETAILLEE (Animations latérales croisées) -->
+        <section class="container py-5" style="overflow: hidden;">
 
             <div class="row align-items-center">
 
-                <div class="col-md-6">
+                <div class="col-md-6" data-aos="fade-right">
                     <h2>Une vision née au Sénégal</h2>
                     <p>
                         AfriTalent est née d’un constat simple : des milliers de jeunes talents sénégalais
@@ -90,7 +93,7 @@
                     </p>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-6" data-aos="fade-left">
                     <img src="images/Dakartech.jpg" class="img-fluid rounded" alt="Dakar tech">
                 </div>
 
@@ -98,16 +101,16 @@
 
         </section>
 
-        <!-- VALEURS -->
+        <!-- VALEURS (Animation en cascade au scroll) -->
         <section class="bg-light py-5">
 
             <div class="container">
 
-                <h2 class="text-center mb-4">Nos valeurs</h2>
+                <h2 class="text-center mb-4" data-aos="fade-up">Nos valeurs</h2>
 
                 <div class="row g-4 text-center">
 
-                    <div class="col-md-3">
+                    <div class="col-md-3" data-aos="fade-up" data-aos-delay="0">
                         <div class="p-3">
                             <i class="bi bi-lightbulb fs-1 text-primary"></i>
                             <h5>Innovation</h5>
@@ -115,7 +118,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-3" data-aos="fade-up" data-aos-delay="150">
                         <div class="p-3">
                             <i class="bi bi-people fs-1 text-success"></i>
                             <h5>Communauté</h5>
@@ -123,7 +126,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
                         <div class="p-3">
                             <i class="bi bi-globe fs-1 text-warning"></i>
                             <h5>Accessibilité</h5>
@@ -131,7 +134,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-3" data-aos="fade-up" data-aos-delay="450">
                         <div class="p-3">
                             <i class="bi bi-award fs-1 text-danger"></i>
                             <h5>Excellence</h5>
@@ -145,14 +148,14 @@
 
         </section>
 
-        <!-- EQUIPE -->
+        <!-- EQUIPE (Animation en cascade au scroll) -->
         <section class="container py-5">
 
-            <h2 class="text-center mb-4">Notre équipe</h2>
+            <h2 class="text-center mb-4" data-aos="fade-up">Notre équipe</h2>
 
             <div class="row g-4">
 
-                <div class="col-md-3 text-center">
+                <div class="col-md-3 text-center" data-aos="fade-up" data-aos-delay="0">
                     <div class="card p-3">
                         <img src="https://via.placeholder.com/120" class="rounded-circle mx-auto" alt="">
                         <h5 class="mt-2">Aïssatou Ndiaye</h5>
@@ -160,7 +163,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-3 text-center">
+                <div class="col-md-3 text-center" data-aos="fade-up" data-aos-delay="150">
                     <div class="card p-3">
                         <img src="https://via.placeholder.com/120" class="rounded-circle mx-auto" alt="">
                         <h5 class="mt-2">Abdoulaye Diouf</h5>
@@ -168,7 +171,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-3 text-center">
+                <div class="col-md-3 text-center" data-aos="fade-up" data-aos-delay="300">
                     <div class="card p-3">
                         <img src="https://via.placeholder.com/120" class="rounded-circle mx-auto" alt="">
                         <h5 class="mt-2">Fatou Sarr</h5>
@@ -176,7 +179,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-3 text-center">
+                <div class="col-md-3 text-center" data-aos="fade-up" data-aos-delay="450">
                     <div class="card p-3">
                         <img src="https://via.placeholder.com/120" class="rounded-circle mx-auto" alt="">
                         <h5 class="mt-2">Cheikh Fall</h5>
@@ -188,8 +191,8 @@
 
         </section>
 
-        <!-- CHIFFRES -->
-        <section class="bg-dark text-white py-5">
+        <!-- CHIFFRES (Animation fade-up + Compteurs animés intégrés) -->
+        <section class="bg-dark text-white py-5" data-aos="fade-up">
 
             <div class="container text-center">
 
@@ -198,22 +201,22 @@
                 <div class="row">
 
                     <div class="col-md-3">
-                        <h3>3 200+</h3>
+                        <h3><span class="counter" data-target="3200">0</span>+</h3>
                         <p>Freelances</p>
                     </div>
 
                     <div class="col-md-3">
-                        <h3>950+</h3>
+                        <h3><span class="counter" data-target="950">0</span>+</h3>
                         <p>Entreprises</p>
                     </div>
 
                     <div class="col-md-3">
-                        <h3>18 500+</h3>
+                        <h3><span class="counter" data-target="18500">0</span>+</h3>
                         <p>Missions</p>
                     </div>
 
                     <div class="col-md-3">
-                        <h3>14</h3>
+                        <h3><span class="counter" data-target="14">0</span></h3>
                         <p>Régions couvertes</p>
                     </div>
 
@@ -240,17 +243,17 @@
                 <div class="col-md-3">
                     <h5>Liens utiles</h5>
                     <ul class="list-unstyled">
-                        <li><a href="index.html" class="text-white text-decoration-none">Accueil</a></li>
-                        <li><a href="freelances.html" class="text-white text-decoration-none">Freelances</a></li>
-                        <li><a href="tarifs.html" class="text-white text-decoration-none">Tarifs</a></li>
-                        <li><a href="about.html" class="text-white text-decoration-none">À propos</a></li>
-                        <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
+                        <li><a href="index.html" class="text-white-50 text-decoration-none">Accueil</a></li>
+                        <li><a href="freelances.html" class="text-white-50 text-decoration-none">Freelances</a></li>
+                        <li><a href="tarifs.html" class="text-white-50 text-decoration-none">Tarifs</a></li>
+                        <li><a href="about.html" class="text-white-50 text-decoration-none">À propos</a></li>
+                        <li><a href="contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
                     </ul>
                 </div>
 
                 <div class="col-md-3">
                     <h5>Ressources</h5>
-                    <ul class="list-unstyled">
+                    <ul class="list-unstyled text-white-50">
                         <li>Blog</li>
                         <li>FAQ</li>
                         <li>Centre d’aide</li>
@@ -260,9 +263,9 @@
 
                 <div class="col-md-3">
                     <h5>Contact</h5>
-                    <p>Dakar, Sénégal</p>
-                    <p>+221 77 123 45 67</p>
-                    <p>contact@afritalent.sn</p>
+                    <p class="text-white-50">Dakar, Sénégal</p>
+                    <p class="text-white-50">+221 77 123 45 67</p>
+                    <p class="text-white-50">contact@afritalent.com</p> <!-- .sn enlevé ici -->
                 </div>
 
             </div>
@@ -279,6 +282,17 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Scripts JS pour la bibliothèque d'animation AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800, // Durée globale des animations (0.8s)
+            once: true,     // L'effet ne se joue qu'une fois au premier scroll
+            offset: 100    // Se déclenche 100px avant d'apparaître à l'écran
+        });
+    </script>
+
     <button id="backToTop" class="btn btn-warning" title="Retour en haut">
       <i class="bi bi-arrow-up-short"></i>
     </button>
