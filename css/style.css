@@ -1,23 +1,26 @@
 /* ==========================================================================
-   AFRITALENT — DESIGN SYSTEM ( - Édition 2026)
+   AFRITALENT — DESIGN SYSTEM (Édition 2026)
    ========================================================================== */
 
 /* 1. IMPORTS DES GOOGLE FONTS */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700&family=Space+Grotesk:wght=500;600;700;800&display=swap');
 
-/* 2. VARIABLES CSS (:root) — Exigence : 6+ variables définies */
+/* 2. VARIABLES CSS (:root) — Système de Design Unifié */
 :root {
-    /* Palette de couleurs cohérente */
+    /* Palette de couleurs (Mode Clair par défaut) */
+    --clr-bg-body: #f7f7f7;        /* Fond de la page */
+    --clr-bg-card: #ffffff;        /* Fond des cartes et blocs */
     --clr-dark: #0d0d0d;           /* Noir profond principal */
-    --clr-dark-soft: #1a1a1a;      /* Noir adouci pour les sections alternées */
+    --clr-dark-soft: #1a1a1a;      /* Noir adouci pour sections alternées */
     --clr-gold: #d4af37;           /* Doré AfriTalent */
     --clr-gold-light: #f5d76e;     /* Doré éclatant pour les hovers */
-    --clr-bg-light: #f7f7f7;       /* Fond clair de page */
     --clr-white: #ffffff;
+    
+    /* Couleurs de texte */
     --clr-text-main: #1a1a1a;
-    --clr-text-muted: #6c757d;     /* Gris textuel élégant */
+    --clr-text-muted: #6c757d;     /* Gris secondaire élégant */
 
-    /* Typographies appliquées */
+    /* Typographies */
     --ff-body: 'Plus Jakarta Sans', sans-serif;
     --ff-heading: 'Space Grotesk', sans-serif;
 
@@ -39,6 +42,16 @@
     --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
+/* Surcharge des variables pour le Mode Sombre (data-theme="dark") */
+[data-theme="dark"] {
+    --clr-bg-body: #121212;
+    --clr-bg-card: #1e1e1e;
+    --clr-text-main: #f8f9fa;
+    --clr-text-muted: #adb5bd;
+    --clr-dark: #050505;
+    --clr-dark-soft: #0f0f0f;
+}
+
 /* ==========================================================================
    3. RESET CSS & STYLES DE BASE
    ========================================================================== */
@@ -48,16 +61,19 @@
     padding: 0;
 }
 
-body {
+body.afri-body {
     font-family: var(--ff-body);
-    background-color: var(--clr-bg-light);
+    background-color: var(--clr-bg-body);
     color: var(--clr-text-main);
     line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6, .navbar-brand {
     font-family: var(--ff-heading);
-    color: var(--clr-dark);
+    color: var(--clr-text-main);
+    letter-spacing: -0.02em;
 }
 
 p {
@@ -73,13 +89,32 @@ section {
     padding: var(--space-xl) 0;
 }
 
+/* Compatibilité des classes utilitaires Bootstrap en mode sombre */
+[data-theme="dark"] .bg-white,
+[data-theme="dark"] .bg-light {
+    background-color: var(--clr-bg-card) !important;
+    color: var(--clr-white) !important;
+}
+
+[data-theme="dark"] .text-dark {
+    color: var(--clr-white) !important;
+}
+
 /* ==========================================================================
-   4. NAVBAR STYLISÉE (Logo visible, liens alignés, effet souligné)
+   4. NAVBAR STYLISÉE (Avec effet Shrink au Scroll)
    ========================================================================== */
 .navbar {
     background-color: var(--clr-dark) !important;
-    padding: var(--space-sm) 0;
+    padding: 20px 0; /* Taille initiale large */
     box-shadow: var(--shadow-sm);
+    transition: all 0.4s ease-in-out;
+}
+
+/* Classe injectée par JavaScript au défilement */
+.navbar.navbar-scrolled {
+    padding: 10px 0; /* Effet Shrink */
+    background-color: #111418 !important; /* Arrière-plan légèrement plus dense */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-brand {
@@ -107,7 +142,7 @@ section {
     color: var(--clr-gold) !important;
 }
 
-/* Effet discret d'underline doré */
+/* Effet discret de soulignement doré */
 .navbar-nav .nav-link::after {
     content: "";
     position: absolute;
@@ -125,11 +160,11 @@ section {
     width: 80%;
 }
 
-/* Bouton CTA "Rejoindre AfriTalent" */
+/* Boutons et éléments d'action (CTA) */
 .btn-warning {
     background-color: var(--clr-gold) !important;
     border: none !important;
-    color: var(--clr-dark) !important;
+    color: #0d0d0d !important;
     font-weight: 600;
     padding: 10px 24px;
     border-radius: var(--radius-sm);
@@ -142,8 +177,16 @@ section {
     box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
 }
 
+/* Interrupteur de thème (Theme Toggle Icon) */
+#themeToggle {
+    transition: var(--transition-smooth);
+}
+#themeToggle:hover {
+    transform: rotate(15deg);
+}
+
 /* ==========================================================================
-   5. CORRECTION ET STYLISATION DES PHOTOS DE PROFIL (FIN DU BUG)
+   5. PHOTOS DE PROFIL (Ajustement universel des avatars)
    ========================================================================== */
 .card img.rounded-circle {
     width: 130px !important;
@@ -154,7 +197,7 @@ section {
     object-position: center;
     display: block;
     margin: 0 auto var(--space-sm) auto;
-    border: 4px solid var(--clr-bg-light);
+    border: 4px solid var(--clr-bg-body);
     box-shadow: var(--shadow-sm);
     transition: var(--transition-smooth);
 }
@@ -165,10 +208,10 @@ section {
 }
 
 /* ==========================================================================
-   6. SECTIONS COMPOSANTES EXIGÉES
+   6. STRUCURE DES PAGES & SECTIONS COMPOSANTES
    ========================================================================== */
 
-/* --- SECTION HERO (Disposition asymétrique & typographie expressive) --- */
+/* --- SECTION HERO (Asymétrique) --- */
 .hero-section {
     background: linear-gradient(135deg, var(--clr-dark), var(--clr-dark-soft));
     color: var(--clr-white);
@@ -178,7 +221,7 @@ section {
 
 .hero-section .container {
     display: grid;
-    grid-template-columns: 1.2fr 1fr; /* Asymétrie */
+    grid-template-columns: 1.2fr 1fr;
     align-items: center;
     gap: var(--space-lg);
 }
@@ -198,48 +241,97 @@ section {
 }
 
 .bento-item {
-    background: var(--clr-white);
+    background: var(--clr-bg-card);
     padding: var(--space-md);
     border-radius: var(--radius-md);
-    box-shadow: var(--shadow-sm);
-}
-
-.bento-item-large {
-    grid-column: span 2; /* Case asymétrique double largeur bento */
-    background: linear-gradient(135deg, var(--clr-dark-soft), var(--clr-dark));
-    color: var(--clr-white);
-}
-
-/* --- SECTION CARTES FREELANCES (Effets hover CSS demandés) --- */
-.card {
-    border: none;
-    border-radius: var(--radius-md);
-    background: var(--clr-white);
     box-shadow: var(--shadow-sm);
     transition: var(--transition-smooth);
 }
 
-/* Effets hover : transformation et ombre accentuée */
+.bento-item-large {
+    grid-column: span 2;
+    background: linear-gradient(135deg, var(--clr-dark-soft), var(--clr-dark));
+    color: var(--clr-white);
+}
+[data-theme="dark"] .bento-item-large h2,
+[data-theme="dark"] .bento-item-large h3 {
+    color: var(--clr-white);
+}
+
+/* --- SECTION CARTES FREELANCES (Effets Hover & Badges) --- */
+.card {
+    border: none !important;
+    border-radius: var(--radius-md);
+    background: var(--clr-bg-card) !important;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-smooth);
+    color: var(--clr-text-main) !important;
+}
+
 .card:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-md);
 }
 
-/* Bordures thématiques associées à vos badges HTML */
+/* Bordures supérieures thématiques */
 .border-warning { border-top: 5px solid var(--clr-gold) !important; }
 .border-success { border-top: 5px solid #198754 !important; }
 .border-primary { border-top: 5px solid #0d6efd !important; }
 
-/* --- SECTION TÉMOIGNAGES (Carousel Bootstrap) --- */
+/* --- SECTION TÉMOIGNAGES --- */
+.blockquote {
+    background-color: var(--clr-bg-card);
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius-md);
+    border-left: 5px solid var(--clr-gold);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-smooth);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.blockquote p {
+    color: var(--clr-text-main) !important;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: var(--space-sm);
+}
+
+.blockquote-footer {
+    font-family: var(--ff-heading);
+    color: var(--clr-gold) !important;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+/* Effet survol dynamique de la carte témoignage */
+.blockquote:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--shadow-md);
+    background-color: var(--clr-dark) !important;
+    border-left-color: var(--clr-gold-light);
+}
+
+.blockquote:hover p {
+    color: var(--clr-white) !important;
+}
+
+.blockquote:hover .blockquote-footer {
+    color: var(--clr-gold-light) !important;
+}
+
+/* Carrousel Bootstrap Alternatif */
 .carousel-item {
     padding: var(--space-lg) var(--space-md);
     text-align: center;
-    background: var(--clr-white);
+    background: var(--clr-bg-card);
     border-radius: var(--radius-md);
 }
 
 /* ==========================================================================
-   7. FOOTER & RESPONSIVE
+   7. FOOTER, BOUTON RETOUR EN HAUT & RESPONSIVE
    ========================================================================== */
 footer {
     background-color: var(--clr-dark) !important;
@@ -254,215 +346,34 @@ footer a:hover {
     color: var(--clr-gold);
 }
 
-@media (max-width: 992px) {
-    .hero-section .container {
-        grid-template-columns: 1fr; /* Passage sur une colonne sur mobile */
-        text-align: center;
-    }
-    .bento-grid {
-        grid-template-columns: 1fr; /* Bento s'empile verticalement sur mobile */
-    }
-    .bento-item-large {
-        grid-column: span 1;
-    }
-    .navbar-nav .nav-link {
-        margin-left: 0;
-        padding: var(--space-xs) 0;
-    }
-}
-
-/* ==========================================================================
-   SECTION TÉMOIGNAGES — BLOCS CÔTE À CÔTE & EFFETS HOVER
-   ========================================================================== */
-
-/* Style de base des blocs de témoignages */
-.blockquote {
-    background-color: var(--clr-white);
-    padding: var(--space-md) var(--space-lg);
-    border-radius: var(--radius-md);
-    border-left: 5px solid var(--clr-gold); /* Rappel de la touche dorée */
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition-smooth);
-    height: 100%; /* Aligne la hauteur si un texte est plus long */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-/* Style du texte à l'intérieur du témoignage */
-.blockquote p {
-    color: var(--clr-text-main) !important;
-    font-size: 1.1rem;
-    font-weight: 500;
-    margin-bottom: var(--space-sm);
-}
-
-/* Style de l'auteur (le footer du témoignage) */
-.blockquote-footer {
-    font-family: var(--ff-heading);
-    color: var(--clr-gold) !important;
-    font-size: 0.9rem;
-    margin-top: auto;
-}
-
-/* EFFET DE SURVOL (Hover) — Élégant et dynamique */
-.blockquote:hover {
-    transform: translateY(-5px) scale(1.02); /* Soulèvement et léger zoom */
-    box-shadow: var(--shadow-md); /* Ombre plus profonde */
-    background-color: var(--clr-dark); /* Le bloc passe en mode sombre au survol */
-    border-left-color: var(--clr-gold-light);
-}
-
-/* Changement de couleur du texte au survol pour rester lisible sur fond noir */
-.blockquote:hover p {
-    color: var(--clr-white) !important;
-}
-
-.blockquote:hover .blockquote-footer {
-    color: var(--clr-gold-light) !important;
-}
-
-body.dark-mode {
-    background-color: #121212;
-    color: white;
-}
-
-body.dark-mode .bg-light {
-    background-color: #1e1e1e !important;
-}
-
-body.dark-mode .card {
-    background-color: #1f1f1f;
-    color: white;
-}
-
-body.dark-mode .text-muted {
-    color: #b5b5b5 !important;
-}
-
-/* ==========================================
-   VARIABLES DE THÈME (À adapter selon ton design)
-   ========================================== */
-:root {
-    --bg-body: #ffffff;
-    --text-color: #212529;
-}
-
-[data-theme="dark"] {
-    --bg-body: #121212;
-    --text-color: #f8f9fa;
-}
-
-/* Application du thème global */
-body.afri-body {
-    background-color: var(--bg-body);
-    color: var(--text-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Ajustement pour les cartes et sections en mode sombre */
-[data-theme="dark"] .bg-light, 
-[data-theme="dark"] .card,
-[data-theme="dark"] .custom-hover-card {
-    background-color: #1e1e1e !important;
-    color: #ffffff !important;
-}
-[data-theme="dark"] .text-muted,
-[data-theme="dark"] .blockquote-footer {
-    color: #b0b0b0 !important;
-}
-
-/* ==========================================
-   NAVBAR : EFFET SCROLL (SHRINK & SHADOW)
-   ========================================== */
-.navbar {
-    padding: 20px 0; /* Taille initiale large */
-    transition: all 0.4s ease-in-out;
-}
-
-/* Classe injectée par JavaScript au scroll */
-.navbar.navbar-scrolled {
-    padding: 10px 0; /* Effet Shrink (réduction de hauteur) */
-    background-color: #111418 !important; /* Changement de fond */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25); /* Ombre portée */
-}
-
-/* ==========================================
-   BOUTON RETOUR EN HAUT
-   ========================================== */
+/* Bouton Retour en Haut */
 #backToTop {
     position: fixed;
     bottom: 30px;
     right: 30px;
     width: 45px;
     height: 45px;
-    border-radius: 50%;
+    border-radius: var(--radius-round);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 24px;
     z-index: 1050;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: none;
     
-    /* Caché par défaut */
+    /* Géré dynamiquement par JS */
     opacity: 0;
-    vertical-align: middle;
     visibility: hidden;
-    transition: all 0.3s ease;
+    transition: var(--transition-smooth);
 }
 
-/* Classe injectée par JavaScript pour l'afficher */
 #backToTop.show {
     opacity: 1;
     visibility: visible;
 }
 
-/* Quand le mode sombre de Bootstrap est actif ([data-bs-theme="dark"]) */
-[data-bs-theme="dark"] .bg-light, 
-[data-bs-theme="dark"] .bg-white,
-[data-bs-theme="dark"] .card {
-    background-color: #1e2125 !important; /* Couleur de fond sombre pour les sections/cartes */
-    color: #f8f9fa !important; /* Texte clair */
-}
-
-[data-bs-theme="dark"] .text-dark {
-    color: #ffffff !important; /* Force les textes noirs à devenir blancs */
-}
-
-[data-bs-theme="dark"] .text-muted {
-    color: #adb5bd !important; /* Adoucit le texte secondaire en mode sombre */
-}
-
-/* --- Styles de la navbar au scroll et du bouton --- */
-.navbar {
-    padding: 20px 0;
-    transition: all 0.4s ease-in-out;
-}
-.navbar.navbar-scrolled {
-    padding: 10px 0;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-#backToTop {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    z-index: 1050;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-}
-#backToTop.show {
-    opacity: 1;
-    visibility: visible;
-}
-
+/* Animations d'apparition manuelles facultatives */
 .animate-fade {
     opacity: 0;
     transform: translateY(30px);
@@ -472,4 +383,25 @@ body.afri-body {
 .animate-fade.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* --- MEDIA QUERIES (Responsive) --- */
+@media (max-width: 992px) {
+    .hero-section .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+    .bento-item-large {
+        grid-column: span 1;
+    }
+    .navbar-nav .nav-link {
+        margin-left: 0;
+        padding: var(--space-xs) 0;
+    }
 }

@@ -6,40 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AfriTalent — Accueil</title>
 
+    <!-- Polices Google Fonts (Plus Jakarta Sans & Space Grotesk) -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
 
+    <!-- Framework CSS Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <!-- Bibliothèque Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     
+    <!-- Feuille de styles personnalisée -->
     <link rel="stylesheet" href="style.css">
+    <!-- Script principal (Thème, compteurs, etc.) -->
     <script src="js/main.js" defer></script>
     
+    <!-- CSS de la bibliothèque d'animations AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body class="afri-body">
 
+    <!-- =========================================================
+         SECTION : EN-TÊTE DE NAVIGATION (NAVBAR)
+         ========================================================= -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
 
+            <!-- Logo et Identité -->
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="images/AfriTalent.jpg.png" alt="Logo AfriTalent"
-                    width="40" height="40" class="me-2">
+                <img src="images/AfriTalent.jpg.png" alt="Logo officiel AfriTalent" width="40" height="40" class="me-2">
                 <span class="fw-bold">AfriTalent</span>
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navMenu" aria-controls="navMenu"
-                aria-expanded="false" aria-label="Menu de navigation">
+            <!-- Bouton menu burger (Mobile) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Ouvrir le menu de navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+            <!-- Liens de navigation -->
             <div class="collapse navbar-collapse" id="navMenu">
-
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Accueil</a>
+                        <a class="nav-link active" href="index.html" aria-current="page">Accueil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="freelances.html">Freelances</a>
@@ -54,22 +61,29 @@
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
                 </ul>
-                <button id="themeToggle" class="btn btn-outline-light ms-lg-3">
+                
+                <!-- Bascule Mode Sombre / Clair -->
+                <button id="themeToggle" class="btn btn-outline-light ms-lg-3" aria-label="Changer le mode de couleur">
                     🌙
                 </button>
 
+                <!-- Bouton d'action principal -->
                 <a href="freelances.html" class="btn btn-warning ms-lg-3">
                     Rejoindre AfriTalent
                 </a>
-
             </div>
         </div>
     </nav>
 
+    <!-- Espacement compensatoire sous la barre de navigation fixe -->
     <div style="margin-top:100px;"></div>
 
+    <!-- =========================================================
+         SECTION : CONTENU PRINCIPAL DE LA PAGE D'ACCUEIL
+         ========================================================= -->
     <main>
 
+        <!-- ZONE HERO : Accroche principale et boutons d'action -->
         <section class="py-5 text-center hero-section" data-aos="zoom-in">
             <div class="container">
                 <h1 class="display-5 fw-bold hero-title">
@@ -89,6 +103,7 @@
             </div>
         </section>
 
+        <!-- STATISTIQUES : Preuve sociale chiffrée -->
         <section class="py-5 stats-section" data-aos="fade-up">
             <div class="container text-center">
                 <h2 class="mb-5 fw-bold">AfriTalent en chiffres</h2>
@@ -115,22 +130,26 @@
             </div>
         </section>
 
+        <!-- SERVICES : Domaines d'expertise mis en avant -->
         <section class="py-5 services-section">
             <div class="container">
                 <h2 class="text-center mb-5 fw-bold" data-aos="fade-up">Nos domaines d'expertise</h2>
                 <div class="row g-4">
+                    <!-- Service 1 -->
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
                         <div class="card p-4 h-100 shadow-sm">
                             <h5 class="fw-bold mb-3">Développement Web</h5>
                             <p class="mb-0">Création de sites modernes et applications performantes.</p>
                         </div>
                     </div>
+                    <!-- Service 2 -->
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
                         <div class="card p-4 h-100 shadow-sm">
                             <h5 class="fw-bold mb-3">Design UI/UX</h5>
                             <p class="mb-0">Interfaces modernes et expériences utilisateur optimisées.</p>
                         </div>
                     </div>
+                    <!-- Service 3 -->
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                         <div class="card p-4 h-100 shadow-sm">
                             <h5 class="fw-bold mb-3">Marketing Digital</h5>
@@ -141,13 +160,12 @@
             </div>
         </section>
 
+        <!-- TÉMOIGNAGES : Retours d'expérience clients -->
         <section class="py-5 testimonials-section" style="overflow: hidden;">
             <div class="container">
-
                 <h2 class="text-center mb-5 fw-bold" data-aos="fade-up">Témoignages</h2>
-
                 <div class="row g-4">
-
+                    <!-- Témoignage 1 -->
                     <div class="col-md-6" data-aos="fade-right">
                         <div class="p-4 bg-white rounded-3 border-start border-warning border-4 shadow-sm custom-hover-card h-100">
                             <blockquote class="blockquote mb-0">
@@ -161,6 +179,7 @@
                         </div>
                     </div>
 
+                    <!-- Témoignage 2 -->
                     <div class="col-md-6" data-aos="fade-left">
                         <div class="p-4 bg-white rounded-3 border-start border-warning border-4 shadow-sm custom-hover-card h-100">
                             <blockquote class="blockquote mb-0">
@@ -173,12 +192,11 @@
                             </blockquote>
                         </div>
                     </div>
-
                 </div>
-
             </div>
         </section>
 
+        <!-- CALL TO ACTION (CTA) : Bannière de fin pour inciter à l'inscription -->
         <section class="py-5 bg-dark text-white text-center cta-section" data-aos="zoom-in-up">
             <div class="container">
                 <h2 class="fw-bold">Rejoignez la révolution digitale sénégalaise</h2>
@@ -193,11 +211,14 @@
 
     </main>
 
+    <!-- =========================================================
+         SECTION : PIED DE PAGE (FOOTER COMMUN)
+         ========================================================= -->
     <footer class="bg-dark text-white mt-5 pt-5 pb-3">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 mb-3">
-                    <h5 class="fw-bold text-white">AfriTalent</h5>
+                    <h5 class="fw-bold text-white">AfriTalent 🇸🇳</h5>
                     <p class="text-white-50 small">Plateforme sénégalaise de mise en relation entre freelances et entreprises.</p>
                 </div>
                 <div class="col-md-3 mb-3">
@@ -206,6 +227,8 @@
                         <li><a href="index.html" class="text-white-50 text-decoration-none small">Accueil</a></li>
                         <li><a href="freelances.html" class="text-white-50 text-decoration-none small">Freelances</a></li>
                         <li><a href="tarifs.html" class="text-white-50 text-decoration-none small">Tarifs</a></li>
+                        <li><a href="about.html" class="text-white-50 text-decoration-none small">À propos</a></li>
+                        <li><a href="contact.html" class="text-white-50 text-decoration-none small">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 mb-3">
@@ -213,7 +236,8 @@
                     <ul class="list-unstyled text-white-50 small">
                         <li>Blog</li>
                         <li>FAQ</li>
-                        <li>Support</li>
+                        <li>Centre d’aide</li>
+                        <li>Conditions</li>
                     </ul>
                 </div>
                 <div class="col-md-3 mb-3">
@@ -223,25 +247,28 @@
                     <p class="text-white-50 small">contact@afritalent.sn</p>
                 </div>
             </div>
-            <hr class="bg-secondary">
+            <hr class="border-secondary">
             <p class="text-center mb-0 text-white-50 small">
                 © 2026 AfriTalent — Tous droits réservés
             </p>
         </div>
     </footer>
 
+    <!-- Scripts Bootstrap natifs -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
+    <!-- Script d'animations au défilement (AOS) -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
             duration: 800, // Durée globale des animations (0.8s)
-            once: true,     // L'effet ne se joue qu'une fois au premier scroll
-            offset: 100    // Déclenche l'effet 100px avant que l'élément n'apparaisse complètement
+            once: true,    // L'effet ne se joue qu'une fois au premier scroll
+            offset: 100    // Déclenche l'effet 100px avant que l'élément n'apparaisse
         });
     </script>
 
-    <button id="backToTop" class="btn btn-warning" title="Retour en haut">
+    <!-- Bouton de retour rapide en haut de page -->
+    <button id="backToTop" class="btn btn-warning" title="Retour en haut" aria-label="Retour en haut de la page">
       <i class="bi bi-arrow-up-short"></i>
     </button>
 </body>

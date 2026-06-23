@@ -11,7 +11,6 @@
     <script src="js/main.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     
-    <!-- CSS de la bibliothèque d'animation AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
@@ -21,32 +20,30 @@
         <div class="container">
 
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="images/AfriTalent.jpg.png" alt="Logo AfriTalent"
-                    width="40" height="40" class="me-2">
+                <img src="images/AfriTalent.jpg.png" alt="Logo officiel AfriTalent" width="40" height="40" class="me-2">
                 <span class="fw-bold">AfriTalent</span>
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Ouvrir le menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navMenu">
-
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="freelances.html">Freelances</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="freelances.html" aria-current="page">Freelances</a></li>
                     <li class="nav-item"><a class="nav-link" href="tarifs.html">Tarifs</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">À propos</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
-                <button id="themeToggle" class="btn btn-outline-light ms-lg-3">
+                
+                <button id="themeToggle" class="btn btn-outline-light ms-lg-3" aria-label="Changer le mode de couleur">
                     🌙
                 </button>
 
                 <a href="contact.html" class="btn btn-warning ms-lg-3">
                     Rejoindre AfriTalent
                 </a>
-
             </div>
         </div>
     </nav>
@@ -55,7 +52,6 @@
 
     <main>
 
-        <!-- Animation fade-up ajoutée sur le titre -->
         <section class="text-center py-4" data-aos="fade-up">
             <div class="container">
                 <h1 class="fw-bold">Découvrez les freelances sénégalais</h1>
@@ -65,7 +61,6 @@
             </div>
         </section>
 
-        <!-- Animation fade-up ajoutée sur les compteurs statistiques -->
         <section class="container mb-5" data-aos="fade-up">
             <div class="row text-center g-3">
                 <div class="col-md-4">
@@ -89,20 +84,18 @@
             </div>
         </section>
 
-        <!-- Animation fade-up ajoutée sur la barre de recherche -->
         <section class="container mb-5" data-aos="fade-up">
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="input-group">
                         <span class="input-group-text bg-white border-end-0"><i class="bi bi-search text-muted"></i></span>
-                        <input type="text" class="form-control border-start-0 ps-0"
+                        <input type="text" class="form-control border-start-0 ps-0" aria-label="Rechercher un freelance par mot-clé"
                             placeholder="Rechercher un freelance (développeur, designer, marketing...)">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Boutons de filtrage par catégorie -->
         <section class="container mb-4 text-center" data-aos="fade-up">
             <div class="btn-group flex-wrap" role="group" aria-label="Catégories de freelances">
                 <button type="button" class="btn btn-warning filter-btn m-1 rounded" data-filter="all">Tous</button>
@@ -114,12 +107,10 @@
         </section>
 
         <section class="container mb-5">
-            <h2 class="text-center mb-4 fw-bold">Nos Freelances</h2>
+            <h2 class="text-center mb-4 fw-bold visually-hidden">Nos Freelances</h2>
 
-            <!-- Conteneur global de toutes les cartes avec AOS -->
             <div class="row g-4" id="freelancers-container" data-aos="fade-up">
 
-                <!-- Ibrahima Ndiaye (Dev) -->
                 <div class="col-md-4 freelance-card" data-category="dev">
                     <div class="card h-100 p-4 text-center border-warning shadow-sm">
                         <div>
@@ -133,7 +124,6 @@
                     </div>
                 </div>
 
-                <!-- Awa Diop (Design) -->
                 <div class="col-md-4 freelance-card" data-category="design">
                     <div class="card h-100 p-4 text-center border-success shadow-sm">
                         <div>
@@ -143,11 +133,10 @@
                         <h5 class="fw-bold mb-1">Awa Diop</h5>
                         <p class="text-muted small">UI/UX Designer</p>
                         <p class="mb-2"><strong>12 000 FCFA / heure</strong></p>
-                        <div class="text-warning"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-offset"></i></div>
+                        <div class="text-warning"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></div>
                     </div>
                 </div>
 
-                <!-- Cheikh Fall (Dev) -->
                 <div class="col-md-4 freelance-card" data-category="dev">
                     <div class="card h-100 p-4 text-center border-primary shadow-sm">
                         <div>
@@ -161,20 +150,20 @@
                     </div>
                 </div>
 
-                <!-- Mariama Ba (Data) -->
                 <div class="col-md-4 freelance-card" data-category="data">
                     <div class="card h-100 p-4 text-center shadow-sm">
+                        <div class="mb-3" style="height: 24px;"></div>
                         <img src="images/MayramSylla.jpg" class="rounded-circle mx-auto mb-3 img-fluid" alt="Mariama Ba" width="130" height="130" style="object-fit: cover;">
                         <h5 class="fw-bold mb-1">Mariama Ba</h5>
                         <p class="text-muted small">Data Analyst</p>
                         <p class="mb-2"><strong>18 000 FCFA / heure</strong></p>
-                        <div class="text-warning"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-offset"></i></div>
+                        <div class="text-warning"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></div>
                     </div>
                 </div>
 
-                <!-- Ousmane Sy (Dev) -->
                 <div class="col-md-4 freelance-card" data-category="dev">
                     <div class="card h-100 p-4 text-center shadow-sm">
+                        <div class="mb-3" style="height: 24px;"></div>
                         <img src="images/OusmaneBa.jpg" class="rounded-circle mx-auto mb-3 img-fluid" alt="Ousmane Sy" width="130" height="130" style="object-fit: cover;">
                         <h5 class="fw-bold mb-1">Ousmane Sy</h5>
                         <p class="text-muted small">Développeur Mobile</p>
@@ -183,20 +172,20 @@
                     </div>
                 </div>
 
-                <!-- Fatou Sarr (Marketing) -->
                 <div class="col-md-4 freelance-card" data-category="marketing">
                     <div class="card h-100 p-4 text-center shadow-sm">
+                        <div class="mb-3" style="height: 24px;"></div>
                         <img src="images/FatouBa.jpg.avif" class="rounded-circle mx-auto mb-3 img-fluid" alt="Fatou Sarr" width="130" height="130" style="object-fit: cover;">
                         <h5 class="fw-bold mb-1">Fatou Sarr</h5>
                         <p class="text-muted small">Marketing Digital</p>
                         <p class="mb-2"><strong>10 000 FCFA / heure</strong></p>
-                        <div class="text-warning"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-offset"></i></div>
+                        <div class="text-warning"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></div>
                     </div>
                 </div>
 
-                <!-- Mamadou Seck (Data / Cyber) -->
                 <div class="col-md-4 freelance-card" data-category="data">
                     <div class="card h-100 p-4 text-center shadow-sm">
+                        <div class="mb-3" style="height: 24px;"></div>
                         <img src="images/MamadouDiop.jpg" class="rounded-circle mx-auto mb-3 img-fluid" alt="Mamadou Seck" width="130" height="130" style="object-fit: cover;">
                         <h5 class="fw-bold mb-1">Mamadou Seck</h5>
                         <p class="text-muted small">Cybersécurité</p>
@@ -205,20 +194,20 @@
                     </div>
                 </div>
 
-                <!-- Khadija Gueye (Marketing) -->
                 <div class="col-md-4 freelance-card" data-category="marketing">
                     <div class="card h-100 p-4 text-center shadow-sm">
+                        <div class="mb-3" style="height: 24px;"></div>
                         <img src="images/RamaDiop.jpg.avif" class="rounded-circle mx-auto mb-3 img-fluid" alt="Khadija Gueye" width="130" height="130" style="object-fit: cover;">
                         <h5 class="fw-bold mb-1">Khadija Gueye</h5>
                         <p class="text-muted small">Rédactrice Tech</p>
                         <p class="mb-2"><strong>8 000 FCFA / heure</strong></p>
-                        <div class="text-warning"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-offset"></i></div>
+                        <div class="text-warning"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></div>
                     </div>
                 </div>
 
-                <!-- Amadou Diallo (Design) -->
                 <div class="col-md-4 freelance-card" data-category="design">
                     <div class="card h-100 p-4 text-center shadow-sm">
+                        <div class="mb-3" style="height: 24px;"></div>
                         <img src="images/IbrahimaKane.jpg.avif" class="rounded-circle mx-auto mb-3 img-fluid" alt="Amadou Diallo" width="130" height="130" style="object-fit: cover;">
                         <h5 class="fw-bold mb-1">Amadou Diallo</h5>
                         <p class="text-muted small">Motion Designer</p>
@@ -265,7 +254,7 @@
                     <p class="text-white-50 small">contact@afritalent.sn</p>
                 </div>
             </div>
-            <hr class="bg-light">
+            <hr class="border-secondary">
             <div class="text-center">
                 <small class="text-white-50">© 2026 AfriTalent — Tous droits réservés</small>
             </div>
@@ -274,12 +263,11 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Scripts JavaScript pour la gestion de l'animation AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
-            duration: 800, // Durée de l'animation en millisecondes (0.8 seconde)
-            once: true     // L'animation ne se joue qu'une seule fois au scroll descendant
+            duration: 800, // Durée de l'animation (0.8s)
+            once: true     // L'animation s'exécute une seule fois au défilement
         });
     </script>
 
