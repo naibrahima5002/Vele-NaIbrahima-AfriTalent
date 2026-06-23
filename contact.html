@@ -1,23 +1,209 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>AfriTalent — Accueil</title>
- <!-- Bootstrap 5 via CDN : feuille de style -->
- <link
-href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-rel="stylesheet">
- <!-- Votre feuille de style personnelle -->
- <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfriTalent — Contact</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
+
 <body>
- <!-- Le contenu de la page sera ajoute ici -->
- <!-- Bootstrap 5 via CDN : script JavaScript -->
- <script
-src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-></script>
- <!-- Votre script JavaScript -->
- <script src="js/main.js"></script>
- </body>
+
+    <!-- ================= NAVBAR COMMUNE ================= -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="images/AfriTalent.jpg.png" alt="Logo AfriTalent"
+                    width="40" height="40" class="me-2">
+                <span class="fw-bold">AfriTalent 🇸🇳</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMenu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="freelances.html">Freelances</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tarifs.html">Tarifs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">À propos</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+
+                </ul>
+
+                <a href="freelances.html" class="btn btn-warning ms-lg-3">
+                    Voir les freelances
+                </a>
+
+            </div>
+        </div>
+    </nav>
+
+    <div style="margin-top:80px;"></div>
+
+    <!-- ================= MAIN ================= -->
+    <main class="container py-5">
+
+        <!-- TITRE -->
+        <section class="text-center mb-5">
+            <h1 class="fw-bold">Contactez AfriTalent</h1>
+            <p class="text-muted">
+                Une question ? Un projet ? Notre équipe basée à Dakar vous répond rapidement.
+            </p>
+        </section>
+
+        <div class="row g-5">
+
+            <!-- ================= FORMULAIRE ================= -->
+            <div class="col-md-6">
+
+                <h3 class="mb-3">Envoyer un message</h3>
+
+                <form>
+
+                    <!-- Nom -->
+                    <div class="mb-3">
+                        <label class="form-label">Nom</label>
+                        <input type="text" class="form-control" placeholder="Votre nom">
+                    </div>
+
+                    <!-- Prénom -->
+                    <div class="mb-3">
+                        <label class="form-label">Prénom</label>
+                        <input type="text" class="form-control" placeholder="Votre prénom">
+                    </div>
+
+                    <!-- Email -->
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" placeholder="exemple@gmail.com">
+                    </div>
+
+                    <!-- Sujet -->
+                    <div class="mb-3">
+                        <label class="form-label">Sujet</label>
+                        <select class="form-select">
+                            <option>Demande d'information</option>
+                            <option>Support technique</option>
+                            <option>Partenariat</option>
+                            <option>Recrutement freelance</option>
+                        </select>
+                    </div>
+
+                    <!-- Message -->
+                    <div class="mb-3">
+                        <label class="form-label">Message</label>
+                        <textarea class="form-control" rows="5"
+                            placeholder="Écrivez votre message..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        Envoyer
+                    </button>
+
+                </form>
+
+            </div>
+
+            <!-- ================= INFOS + MAP ================= -->
+            <div class="col-md-6">
+
+                <h3 class="mb-3">Informations</h3>
+
+                <p><i class="bi bi-geo-alt"></i> Dakar, Sénégal</p>
+                <p><i class="bi bi-telephone"></i> +221 77 123 45 67</p>
+                <p><i class="bi bi-envelope"></i> contact@afritalent.sn</p>
+
+                <hr>
+
+                <h5>Horaires</h5>
+                <p>Lundi - Vendredi : 8h - 18h</p>
+
+                <hr>
+
+                <!-- GOOGLE MAP -->
+                <h5>Localisation</h5>
+
+                <div class="ratio ratio-16x9">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.1..."
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- ================= FOOTER COMMUN ================= -->
+    <footer class="bg-dark text-white mt-5 pt-5 pb-3">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-3">
+                    <h5 class="fw-bold">AfriTalent 🇸🇳</h5>
+                    <p>Plateforme sénégalaise de mise en relation entre freelances et entreprises numériques.</p>
+                </div>
+
+                <div class="col-md-3">
+                    <h5>Liens utiles</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white text-decoration-none">Accueil</a></li>
+                        <li><a href="freelances.html" class="text-white text-decoration-none">Freelances</a></li>
+                        <li><a href="tarifs.html" class="text-white text-decoration-none">Tarifs</a></li>
+                        <li><a href="about.html" class="text-white text-decoration-none">À propos</a></li>
+                        <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3">
+                    <h5>Ressources</h5>
+                    <ul class="list-unstyled">
+                        <li>Blog</li>
+                        <li>FAQ</li>
+                        <li>Centre d’aide</li>
+                        <li>Conditions</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3">
+                    <h5>Contact</h5>
+                    <p>Dakar, Sénégal</p>
+                    <p>+221 77 123 45 67</p>
+                    <p>contact@afritalent.sn</p>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="text-center">
+                <small>© 2026 AfriTalent — Tous droits réservés</small>
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
 </html>
