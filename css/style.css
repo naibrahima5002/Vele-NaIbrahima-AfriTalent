@@ -321,3 +321,144 @@ footer a:hover {
 .blockquote:hover .blockquote-footer {
     color: var(--clr-gold-light) !important;
 }
+
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+body.dark-mode .bg-light {
+    background-color: #1e1e1e !important;
+}
+
+body.dark-mode .card {
+    background-color: #1f1f1f;
+    color: white;
+}
+
+body.dark-mode .text-muted {
+    color: #b5b5b5 !important;
+}
+
+/* ==========================================
+   VARIABLES DE THÈME (À adapter selon ton design)
+   ========================================== */
+:root {
+    --bg-body: #ffffff;
+    --text-color: #212529;
+}
+
+[data-theme="dark"] {
+    --bg-body: #121212;
+    --text-color: #f8f9fa;
+}
+
+/* Application du thème global */
+body.afri-body {
+    background-color: var(--bg-body);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Ajustement pour les cartes et sections en mode sombre */
+[data-theme="dark"] .bg-light, 
+[data-theme="dark"] .card,
+[data-theme="dark"] .custom-hover-card {
+    background-color: #1e1e1e !important;
+    color: #ffffff !important;
+}
+[data-theme="dark"] .text-muted,
+[data-theme="dark"] .blockquote-footer {
+    color: #b0b0b0 !important;
+}
+
+/* ==========================================
+   NAVBAR : EFFET SCROLL (SHRINK & SHADOW)
+   ========================================== */
+.navbar {
+    padding: 20px 0; /* Taille initiale large */
+    transition: all 0.4s ease-in-out;
+}
+
+/* Classe injectée par JavaScript au scroll */
+.navbar.navbar-scrolled {
+    padding: 10px 0; /* Effet Shrink (réduction de hauteur) */
+    background-color: #111418 !important; /* Changement de fond */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25); /* Ombre portée */
+}
+
+/* ==========================================
+   BOUTON RETOUR EN HAUT
+   ========================================== */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    z-index: 1050;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    
+    /* Caché par défaut */
+    opacity: 0;
+    vertical-align: middle;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Classe injectée par JavaScript pour l'afficher */
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Quand le mode sombre de Bootstrap est actif ([data-bs-theme="dark"]) */
+[data-bs-theme="dark"] .bg-light, 
+[data-bs-theme="dark"] .bg-white,
+[data-bs-theme="dark"] .card {
+    background-color: #1e2125 !important; /* Couleur de fond sombre pour les sections/cartes */
+    color: #f8f9fa !important; /* Texte clair */
+}
+
+[data-bs-theme="dark"] .text-dark {
+    color: #ffffff !important; /* Force les textes noirs à devenir blancs */
+}
+
+[data-bs-theme="dark"] .text-muted {
+    color: #adb5bd !important; /* Adoucit le texte secondaire en mode sombre */
+}
+
+/* --- Styles de la navbar au scroll et du bouton --- */
+.navbar {
+    padding: 20px 0;
+    transition: all 0.4s ease-in-out;
+}
+.navbar.navbar-scrolled {
+    padding: 10px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    z-index: 1050;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
+}
